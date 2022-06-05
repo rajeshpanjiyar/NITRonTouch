@@ -1,0 +1,24 @@
+<%- include("header") -%>
+
+<div class="container">
+  <div class="card">
+    <div class="card_title">
+      <h1>Login</h1>
+      <span>Don't have an account? <a href="signup">SignUp</a></span>
+    </div>
+    <div class="form">
+      <form method="post" action="/api/signin" autocomplete="off">
+        <input type="text" placeholder="Email" name="email" />
+        <input type="password" placeholder="Password" name="password" />
+        <input class="submit" type="submit" placeholder="SignIn" />
+      </form>
+    </div>
+    <div class="errors">
+      <% for(var i = 0; i < alert.length; i++){ %>
+      <p>*<%= alert[i] %></p>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<%- include("footer") -%>

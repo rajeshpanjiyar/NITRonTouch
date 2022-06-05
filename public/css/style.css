@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgb(101, 205, 253) 0%,
+    rgb(184, 245, 210) 90%
+  );
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+  width: fit-content;
+  height: fit-content;
+  background-color: #ffffff;
+  padding: 10px 30px;
+}
+
+.card_title {
+  text-align: center;
+  padding: 10px;
+}
+
+.card_title h1 {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.form input {
+  margin: 10px 0;
+  width: 100%;
+  background-color: #e2e2e2;
+  border: none;
+  outline: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+}
+
+.form button {
+  background-color: #4796ff;
+  color: #ffffff;
+  font-size: 16px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  padding: 8px 15px;
+  width: 100%;
+}
+
+.card_terms {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.card_terms span {
+  margin: 5px;
+  font-size: 13px;
+}
+
+.card a {
+  color: #4796ff;
+  text-decoration: none;
+}
+
+fieldset {
+  align-items: center;
+  padding: 10px;
+  border: none;
+  margin: 10px 0;
+  width: 100%;
+  background-color: #e2e2e2;
+  border: none;
+  outline: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+}
+
+legend {
+  background-color: #ffffff9a;
+  border-radius: 4px;
+  padding: 5px;
+  border: 1px solid #e2e2e293;
+}
+
+#container {
+  width: 100%;
+  text-align: center;
+}
+#container > div {
+  width: calc(100% / 6);
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+
+.errors {
+  vertical-align: top;
+  text-align: center;
+  font-size: 13px;
+  color: red;
+}
+.dashboard {
+  vertical-align: top;
+  text-align: center;
+  font-size: 13px;
+}
+.dashboard a{
+    font-size: 18px;
+}
+
+.submit {
+  font-weight: 600;
+}
+
+.submit:hover {
+  transition: 0.3s;
+  background-color: #878686;
+  font-weight: 600;
+  color: aliceblue;
+}

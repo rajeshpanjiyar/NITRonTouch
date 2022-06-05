@@ -1,0 +1,32 @@
+{
+  "name": "nitrourkela",
+  "version": "1.0.0",
+  "description": "A general project for helping students of NITRourkela regarding Mess and Hostels",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Rajesh Panjiyar",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "connect": "^3.7.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "darkmode-js": "^1.5.7",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-jwt": "^7.7.1",
+    "express-validator": "^6.14.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.3",
+    "nodemon": "^2.0.16",
+    "npm": "^8.10.0",
+   "request": "^2.88.2",
+    "uuid": "^8.3.2",
+    "uuidv1": "^1.6.14"
+  }
+}
