@@ -1,0 +1,172 @@
+<%- include("header") -%>
+
+<div class="signup-container">
+  <div class="card">
+    <div class="card_title">
+      <h1>Create Account</h1>
+      <span>Already have an account? <a href="/api/signin">Sign In</a></span>
+    </div>
+    <div class="form">
+      <form method="post" action="/api/signup" autocomplete="off">
+        <input type="text" placeholder="Full name" name="name" />
+        <input type="text" placeholder="Email" name="email" />
+        <input type="password" placeholder="Password" name="password" />
+        <input type="date" name="dob" class="date" />
+        <fieldset style="display: flex; flex-direction: row">
+          <legend>Gender:</legend>
+          <div id="gender-container">
+            <div>
+              <input type="radio" name="gender" value="Male" />
+              <label for="scales">Male</label>
+            </div>
+
+            <div>
+              <input type="radio" name="gender" value="Female" />
+              <label for="scales">Female</label>
+            </div>
+            <div>
+              <input type="radio" name="gender" value="Others" />
+              <label for="scales">Others</label>
+            </div>
+          </div>
+        </fieldset>
+        <hr />
+        <div>
+          <h2>Student details</h2>
+          <div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label"
+                >Roll Number:</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="recipient-name"
+                name="roll_number"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label"
+                >Room No:</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="recipient-name"
+                name="room_number"
+              />
+            </div>
+            <div>
+              <p>Course:</p>
+              <fieldset style="display: flex; flex-direction: row">
+                <div id="course-container">
+                  <div>
+                    <input type="radio" name="course" value="B.Tech" />
+                    <label for="scales">B.Tech</label>
+                  </div>
+
+                  <div>
+                    <input type="radio" name="course" value="M.Tech" />
+                    <label for="scales">M.Tech</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="course" value="B.Arch" />
+                    <label for="scales">B.Arch</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="course" value="Msc" />
+                    <label for="scales">Msc</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="course" value="Phd" />
+                    <label for="scales">Phd</label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Branch:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="recipient-name"
+                name="branch"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label"
+                >Current Year:</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="recipient-name"
+                name="current_year"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label"
+                >Year of Joining:</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="recipient-name"
+                name="joined_year"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label"
+                >Permanent Address:</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="recipient-name"
+                name="permanent_address"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label"
+                >Contact:</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="recipient-name"
+                name="contact"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Hostel:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="recipient-name"
+                name="hostel"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Block:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="recipient-name"
+                name="block"
+              />
+            </div>
+          </div>
+        </div>
+        <input class="submit" type="submit" placeholder="SignUp" />
+      </form>
+    </div>
+    <div class="errors">
+      <% for(var i = 0; i < alert.length; i++){ %>
+      <p>*<%= alert[i] %></p>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<%- include("footer") -%>

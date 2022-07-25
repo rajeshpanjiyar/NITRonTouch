@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/styles.css" rel="stylesheet">
+
+        <!--FONT AWESOME-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      body {
+        background-color: #F9F9F9;
+      }
+      .card{
+            border:none;
+        }
+    </style>
+    <title>Hostel Details</title>
+  </head>
+  <body>
+     <!-- Navigation bar starts -->
+     <nav
+     class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top mynav"
+     style="background-color: #083640 !important"
+   >
+     <div class="container-fluid">
+       <a class="navbar-brand" href = "/" >NITRourkela</a>
+       <button
+         class="navbar-toggler"
+         type="button"
+         data-bs-toggle="collapse"
+         data-bs-target="#mynavbar"
+       >
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="mynavbar">
+         <ul class="navbar-nav me-auto">
+           <li class="nav-item">
+             <a class="nav-link" href="javascript:void(0)">Hostel</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="javascript:void(0)">Mess</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="javascript:void(0)">Academics</a>
+           </li>
+         </ul>
+       
+         <!-- signUp Login -->
+         <form class="d-flex">
+           <!-- currently Disabled -->
+           <!-- <input class="form-control me-2" type="text" placeholder="Search"> -->
+           <a
+             class="btn btn-primary navsign"
+             type="button"
+             href = "/signup"
+             style="
+               margin-right: 10px;
+               background-color: #ffa05c;
+               border: none;
+             "
+           >
+             SignUp
+         </a>
+           <a
+             class="btn btn-primary navlog"
+             type="button"
+             href = "/login"
+             style="
+               margin-right: 10px;
+               background-color: #a8de7c;
+               border: none;
+             "
+           >
+             LogIn
+       </a>
+         </form>
+       </div>
+     </div>
+   </nav>
+
+   <!-- navigation bar ends -->
+
+    <!-- Front page with front  details and images -->
+    <br /><br /><br />
+    <div class="container">
+      <h1 style="text-align: center; font-size: 6vh; background-color: #C9CBFF; color:#056676; font-weight: 700; ">
+       <%= hostel %>
+      </h1>
+
+      <div class="container mt-3">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary">Mess</button>
+          <button type="button" class="btn btn-primary">Canteen</button>
+          <button type="button" class="btn btn-primary">Parking</button>
+          <div class="btn-group">
+            <button
+              type="button"
+              class="btn btn-primary dropdown-toggle"
+              data-bs-toggle="dropdown"
+            >
+              Select Block
+            </button>
+            <div class="dropdown-menu">
+              <form  action="/hostel/A" method="post">
+              <li><input type = "submit" class="dropdown-item" href="#" name = "block" value = "A" readonly style = "cursor: grabbing;"></input></li>
+            </form>
+            <form  action="/hostel/B" method="post">
+              <li><input type = "submit" class="dropdown-item" href="#" name = "block" value = "B" readonly style = "cursor: grabbing;"></input></li>
+            </form>
+            <form  action="/hostel/C" method="post">
+              <li><input type = "submit" class="dropdown-item" href="#" name = "block" value = "C" readonly style = "cursor: grabbing;"></input></li>
+            </form>
+            <form  action="/hostel/D" method="post">
+              <li><input type = "submit" class="dropdown-item" href="#" name = "block" value = "D" readonly style = "cursor: grabbing;"></input></li>
+            </form>
+            <form  action="/hostel/E" method="post">
+              <li><input type = "submit" class="dropdown-item" href="#" name = "block" value = "E" readonly style = "cursor: grabbing;"></input></li>
+            </form>
+            <form  action="/hostel/F" method="post">
+              <li><input type = "submit" class="dropdown-item" href="#" name = "block" value = "F" readonly style = "cursor: grabbing;"></input></li>
+            </form>
+              
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div  style="padding: 1vh 0vw;">
+        <h2
+         class = "card"
+          style="
+            color: #435560;
+            text-align: center;
+            border-radius: 1vh;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            font-weight: bolder;
+            background-color: white;
+            text-shadow: 1px 1px 4px #819481;
+            padding: 1vh;"
+        >
+        Block-<%= block %>
+        </h2>
+        <div style = "background-color: #083640; padding:0.7vh; font-weight: 800; margin-bottom: 1vh;"><span style = "color:#CDF2CA; margin-left: 1vw; font-size: 2vmax;">Vacant</span> &nbsp; <span style = "color:rgb(129, 186, 235); width: fit-content; font-size: 2vmax;">Alloted</span>
+        </div>
+
+        <div class="card" style = "margin: 0vw 1vw; border-bottom-right-radius: 0px; display: flex;
+        justify-content: center;
+        align-items: center; border-bottom-left-radius: 0px;  padding: 2vh 0vw; background-color: #083640; color: white;">
+          <label style = "padding:1vw; font-size: 4vh;">Ground Floor</label>
+          <div class="container row" style = "align-items: center; display:flex; justify-content: center;">
+            <% for(var i = 101; i <= 148; i++) { %>
+              <% if(i%3 === 0 || i%7 === 0){ %>
+           <div class="item" style = "width: 10vw; height: 10vw; text-align: center; margin:2px; border-radius: 4px; background-color: rgb(129, 186, 235); ">
+             <span style = "font-size: 3.2vmin;"><%= i %></span>
+             <br>
+             <button type="button"  data-bs-toggle="modal" data-bs-target="#myModal" style = "width: fit-content; border-radius: 4px; background-color: #DB3545; color:white; font-size: 2vw; padding:0.2vw; border-color:#DB3545;">Info</button>  
+           </div>
+           <% } else{ %>
+               <div class="item" style = "width: 10vw; height: 10vw; text-align: center; margin:2px; border-radius: 4px; background-color: #CDF2CA; ">
+                   <span style = "font-size: 3.2vmin;"><%= i %></span>
+                   <br>
+                   <button type="button"  data-bs-toggle="modal" data-bs-target="#myModal" style = "width: fit-content; border-radius: 4px; background-color: #DB3545; color:white; font-size: 2vw; padding:0.2vw; border-color:#DB3545;">Info</button>        
+                 </div>
+                 <% } %>
+           <% } %>
+         </div>
+       </div>
+        
+        <div class="card" style = "margin: 0vw 1vw; border-radius: 0px;  background-color: #083640; color: white; display: flex;
+        justify-content: center;
+        align-items: center; padding: 2vh 0vw;">
+            <label style = "padding:1vw; font-size: 4vh;">Floor - 1</label>
+            <div class="container row" style = "align-items: center; display:flex; justify-content: center;">
+                <% for(var i = 201; i <= 248; i++) { %>
+                   <% if(i%3 === 0 || i%7 === 0){ %>
+                <div class="item" style = "width: 10vw; height: 10vw; text-align: center; margin:2px; border-radius: 4px; background-color: rgb(129, 186, 235); ">
+                  <span style = "font-size: 3.2vmin;"><%= i %></span>
+                  <br>
+                  <button type="button"  data-bs-toggle="modal" data-bs-target="#myModal" style = "width: fit-content; border-radius: 4px; background-color: #DB3545; color:white; font-size: 2vw; padding:0.2vw; border-color:#DB3545;">Info</button>  
+                </div>
+                <% } else{ %>
+                    <div class="item" style = "width: 10vw; height: 10vw; text-align: center; margin:2px; border-radius: 4px; background-color: #CDF2CA; ">
+                        <span style = "font-size: 3.2vmin;"><%= i %></span>
+                        <br>
+                        <button type="button"  data-bs-toggle="modal" data-bs-target="#myModal" style = "width: fit-content; border-radius: 4px; background-color: #DB3545; color:white; font-size: 2vw; padding:0.2vw; border-color:#DB3545;">Info</button>        
+                      </div>
+                      <% } %>
+                <% } %>
+              </div>
+            </div>
+
+
+              
+
+        <div class="card" style = "margin: 0vw 1vw; border-radius: 0px; display: flex;
+        justify-content: center;background-color: #083640; color: white;
+        align-items: center; padding: 2vh 0vw;">
+            <label style = "padding:1vw; font-size: 4vh;">Floor - 2</label>
+            <div class="container row" style = "align-items: center; display:flex; justify-content: center;">
+                <% for(var i = 301; i <= 348; i++) { %>
+                   <% if(i%3 === 0 || i%7 === 0){ %>
+                <div class="item" style = "width: 10vw; height: 10vw; text-align: center; margin:2px; border-radius: 4px; background-color: rgb(129, 186, 235); ">
+                  <span style = "font-size: 3.2vmin;"><%= i %></span>
+                  <br>
+                <button type="button"  data-bs-toggle="modal" data-bs-target="#myModal" style = "width: fit-content; border-radius: 4px; background-color: #DB3545; color:white; font-size: 2vw; padding:0.2vw; border-color:#DB3545;">Info</button>
+                </div>
+                <% } else{ %>
+                    <div class="item" style = "width: 10vw; height: 10vw; text-align: center; margin:2px; border-radius: 4px; background-color: #CDF2CA; ">
+                        <span style = "font-size: 3.2vmin;"><%= i %></span>
+                        <br>
+                <button type="button"  data-bs-toggle="modal" data-bs-target="#myModal" style = "width: fit-content; border-radius: 4px; background-color: #DB3545; color:white; font-size: 2vw; padding:0.2vw; border-color:#DB3545;">Info</button>
+                      </div>
+                      <% } %>
+                <% } %>
+              </div>
+        </div>
+
+        <div class="card" style = "margin: 0vw 1vw; border-top-left-radius: 0px;  display: flex;
+        justify-content: center;background-color: #083640; color: white;
+        align-items: center; border-top-right-radius: 0px; padding: 2vh 0vw;">
+            <label style = "padding:1vw; font-size: 4vh;">Floor - 3</label>
+            <div class="container row" style = "align-items: center; display:flex; justify-content: center;">
+                <% for(var i = 401; i <= 448; i++) { %>
+                   <% if(i%3 === 0 || i%7 === 0){ %>
+                <div class="item" style = "width: 10vw; height: 10vw; text-align: center; margin:2px; border-radius: 4px; background-color: rgb(129, 186, 235); ">
+                  <span style = "font-size: 3.2vmin;"><%= i %></span>
+                  <br>
+                <button type="button"  data-bs-toggle="modal" data-bs-target="#myModal" style = "width: fit-content; border-radius: 4px; background-color: #DB3545; color:white; font-size: 2vw; padding:0.2vw; border-color:#DB3545;">Info</button>
+                </div>
+                <% } else{ %>
+                    <div class="item" style = "width: 10vw; height: 10vw; text-align: center; margin:2px; border-radius: 4px; background-color: #CDF2CA; ">
+                        <span style = "font-size: 3.2vmin;"><%= i %></span>
+                        <br>
+                        <button type="button"  data-bs-toggle="modal" data-bs-target="#myModal" style = "width: fit-content; border-radius: 4px; background-color: #DB3545; color:white; font-size: 2vw; padding:0.2vw; border-color:#DB3545;">Info</button>
+                    </div>
+                      <% } %>
+                <% } %>
+              </div>
+        </div>
+      </div>
+    </div>
+    <!-- Container End -->
+    
+    <!-- info modal -->
+    <%- include("info") -%>
+
+
+
+
+<script src="index.js"></script>
+  </body>
+</html>
