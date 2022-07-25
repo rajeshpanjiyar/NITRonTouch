@@ -7,8 +7,9 @@
   font-family: "Poppins", sans-serif;
 }
 
-.container {
-  height: 100vh;
+.signup-container {
+  background-attachment: fixed;
+  height: 100%;
   width: 100%;
   align-items: center;
   display: flex;
@@ -25,6 +26,7 @@
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
   width: fit-content;
   height: fit-content;
+  margin:20px;
   background-color: #ffffff;
   padding: 10px 30px;
 }
@@ -96,11 +98,11 @@ legend {
   border: 1px solid #e2e2e293;
 }
 
-#container {
+#gender-container{
   width: 100%;
   text-align: center;
 }
-#container > div {
+#gender-container > div {
   width: calc(100% / 6);
   display: inline-block;
   vertical-align: top;

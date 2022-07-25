@@ -20,7 +20,6 @@ require("dotenv").config()
 mongoose.connect(process.env.DATABASE, {
     useNewUrlParser:true,
     useUnifiedTopology: true
-    // useCreateIndex:true
 
 }).then(()=>{
     console.log("Database CONNECTED")
@@ -41,6 +40,7 @@ const userRoutes = require("./routes/user")
 app.use('/api', userRoutes) //localhost:3000/api/signup
 
 
+const Mess = require("./models/messes");
 
 
 
@@ -78,17 +78,15 @@ app.get("/api/signin", function(req, res){
 
 
 
-
-
-
-
 //hostel
 var block_name = "A";
 var hostel_name = "Hostel";
 
+// var roomdetails = [];
+
 app.get("/hostel", function(req, res){
 
-    res.render("hosteldetail", {block:block_name, hostel: hostel_name });                            
+    res.render("hosteldetail", {block:block_name, hostel: hostel_name});                            
 });
 app.post("/hostel", function(req, res){ 
     hostel_name = req.body.hostel_name;
@@ -108,12 +106,66 @@ for(var i = 0; i <= 5; i++)
 //mess
 var  mess_name = "Mess";
 app.get("/mess", function(req, res){
-    res.render("messdetail", {messname: mess_name });                            
+
+    // let arr = [];
+
+        let breakf = [];
+        let dish = [];
+        let day = [];
+
+        let temp = [];
+
+
+        let lunch = [];
+        let snacks = [];
+        let dinner = [];
+
+ 
+    Mess.find({ mess_name: "SD Mess" }, (err, obj) => {
+        if (err || !obj) {
+          console.log("Mess not in Database");
+        }
+        
+
+
+        for(var i = 0; i < obj.length; i++){
+        //    console.log(typeof(obj[i].dishes))
+
+          
+            if(obj[i].slot === "Breakfast"){
+
+                day.push(obj[i].day)
+                dish.push(obj[i].dishes)
+                
+            }else if(obj[i].slot === "Lunch"){
+                lunch.push(obj[i]);
+            }else if(obj[i].slot === "Snacks"){
+                snacks.push(obj[i]);
+            }else if(obj[i].slot === "Dinner"){
+                dinner.push(obj[i]);
+            }
+
+        }
+
+        // arr.push(breakf);
+        // arr.push(lunch);
+        // arr.push(snacks);
+        // arr.push(dinner);
+       
+    });
+
+
+
+    res.render("messdetail", {messname: mess_name, dishes: dish, days: day});                            
 });
+
+
 app.post("/mess", function(req, res){ 
     mess_name = req.body.mess_name;
     res.redirect("/mess");
 });
+
+
 
 //canteen
 var cant_name = "Canteen";

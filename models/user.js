@@ -30,6 +30,61 @@ const userSchema = new mongoose.Schema(
       trim: true,
       required: true,
     },
+    course: {
+      type: String,
+      trim: true,
+      required: true,
+      unique: true,
+    },
+    roll_number: {
+      type: String,
+      trim: true,
+      required: true,
+      unique: true,
+    },
+    branch: {
+      type: String,
+      trim: true,
+      required: true,
+      unique: true,
+    },
+    current_year: {
+      type: String,
+      trim: true,
+      required: true,
+      unique: true,
+    },
+    joined_year: {
+      type : String,
+     trim: true,
+     required: true,
+    },
+    permanent_address: {
+     type : String,
+     trim: true,
+     required: true,
+    },
+     contact: {
+      type: String,
+      trim: true,
+      required: true,
+    },
+    hostel: {
+      type: String,
+      trim: true,
+      required: true,
+    },
+    block: {
+      type: String,
+      trim: true,
+      required: true,
+    },
+    room_number: { 
+      type: String,
+      trim: true,
+      required: true,
+     },
+
     created_at: { 
         type: Date
      },

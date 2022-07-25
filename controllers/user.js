@@ -1,6 +1,9 @@
 const User = require("../models/user");
+const Hosteldetails = require("../models/hosteldetails");
+const Mess = require("../models/messes");
+
 const { validationResult } = require("express-validator");
-const user = require("../models/user");
+// const user = require("../models/user");
 var jwt = require("jsonwebtoken");
 var expressJwt = require("express-jwt");
 const express = require("express");
@@ -9,7 +12,6 @@ const bodyParser = require("body-parser");
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
-
 
 var signinAlert = [];
 var signupAlert = [];
@@ -99,3 +101,26 @@ exports.signout = (req, res) => {
     message: "User signout successful",
   });
 };
+
+
+//mess
+exports.mess = (req, res) => {
+
+  const mess = new Mess(req.body);
+
+  mess.save((err, mess) => {
+    if (err) {
+      console.log(err);
+    }
+
+    res.redirect("/mess");
+
+  });
+
+};
+
+
+
+
+
+
